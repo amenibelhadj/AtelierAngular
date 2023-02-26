@@ -9,6 +9,7 @@ import { FooterComponent } from './footer/footer.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { FormsModule } from '@angular/forms';
 import { FormsComponent } from './forms/forms.component';
+import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { FormsComponent } from './forms/forms.component';
     HeaderComponent,
     FooterComponent,
     NotFoundComponent,
-    FormsComponent
+    FormsComponent,
+    TemplateDrivenFormComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,54 @@
+<br><br><br>
+<div class="container ">
+<form #myForm="ngForm" (ngSubmit)="AddInfo(myForm)"> 
+    <h2>Informations générales</h2>
+    <!-- 2 column grid layout with text inputs for the first and last names -->
+    <div class="row mb-4">
+      <div class="col">
+        <div class="form-outline">
+          <input type="text" id="form6Example1" class="form-control" name="nom" ngModel required #nom="ngModel" />
+          <span style="color:red ;" *ngIf="nom.touched && nom?.errors?.['required']">Champ obligatoire</span>
+          <label class="form-label" for="form6Example1">Nom</label>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-outline">
+          <input type="text" id="form6Example2" class="form-control" pattern="[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,3}" name="email" ngModel required #email="ngModel" />
+          <span style="color:red ;" *ngIf="email.touched && email?.errors?.['required']">Champ obligatoire</span>
+          <label class="form-label" for="form6Example2">Email</label>
+        </div>
+      </div>
+    </div>
+    <h2>Informations de payment</h2>
+    <!-- Text input -->
+    <div class="form-outline mb-4">
+      <input type="text" id="form6Example3" class="form-control" name="typecarte" pattern="[0-9]{16}" ngModel required #typecarte="ngModel" />
+      <span style="color:red ;" *ngIf="typecarte.touched && typecarte?.errors?.['required']">Champ obligatoire</span>
+      <label class="form-label" for="form6Example3">Type de carte</label>
+    </div>
+  
+    <!-- Text input -->
+    <div class="form-outline mb-4">
+        <input type="text" id="form6Example3" class="form-control" name="numcarte" ngModel required #numcarte="ngModel" />
+        <span style="color:red ;" *ngIf="numcarte.touched && numcarte?.errors?.['required']">Champ obligatoire</span>
+        <label class="form-label" for="form6Example4">Numéro de carte</label>
+    </div>
+  
+    <!-- Email input -->
+    <div class="form-outline mb-4">
+        <input type="text" id="form6Example3" class="form-control" name="date_exp" ngModel required #date_exp="ngModel" />
+        <span style="color:red ;" *ngIf="date_exp.touched && date_exp?.errors?.['required']">Champ obligatoire</span>
+      <label class="form-label" for="form6Example5">Date expiration</label>
+    </div>
+  
+    <!-- Number input -->
+    <div class="form-outline mb-4">
+      <input type="password" id="form6Example6" class="form-control" *ngIf="informationsValides" />
+      <label class="form-label" for="form6Example6">Code</label>
+    </div>
+  
+    <!-- Submit button -->
+    <button type="submit" class="btn btn-primary btn-block mb-4">Place order</button>
+  </form>
+</div>
+<br><br><br><br><br>
