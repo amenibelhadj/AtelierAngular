@@ -1,0 +1,21 @@
+<div class="container ">
+<form #myForm="ngForm" (ngSubmit)="AddEmploi(myForm)">
+    <br> 
+    <label for="cheese">Référence</label>
+        <input class="form-control" type="text" placeholder="Tapper la référence" name="reference" ngModel>
+    <br>
+    <label for="cheese">Titre</label>
+        <input class="form-control " type="text" placeholder="Entrer le titre de l'offre" name="title" ngModel required minlength="4" #title="ngModel" >
+        <span style="color:red ;"*ngIf="title.touched && title?.errors?.['required']"> Champ obligatoire </span>
+        <span style="color:red ;"*ngIf="title.touched && title?.errors?.['minlength']"> Le titre doit être composé minimum de 4 lettres  </span>
+    <br> 
+        <label for="cheese">Entreprise</label>
+        <input class="form-control" type="text" placeholder="Entrer le nom de l'entreprise" name="entreprise" ngModel>
+    <br>
+        <label for="cheese">Etat</label>
+        <input class="form-control" type="text" placeholder="Entrer l'état de l'offre" name="etat" ngModel>
+    <br>
+        <button class="btn btn-primary" type="submit" [disabled]="myForm.invalid" >Confirmer</button>  
+
+  </form>
+</div>

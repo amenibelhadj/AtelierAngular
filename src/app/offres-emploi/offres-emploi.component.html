@@ -1,0 +1,18 @@
+<h2 class="text-primary text-center">Liste des emplois <button class="btn btn-warning" (click)="bilan()">Bilan</button>
+    <button class="btn btn-success" [routerLink]="['/AddEmploi' ]">Ajouter une offre</button>
+</h2>
+
+
+
+<div class="container text-center" *ngFor="let E of listeEmploi">
+    <div class="card" style="width: 18rem;">
+        <img src="../../assets/offre.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{E.title}}</h5>
+            <h5 class="card-title">Entreprise: {{E.entreprise}}</h5> 
+            <h5 class="card-title">Etat: {{E.etat}}</h5> 
+            <h5 class="card-title">Nombre postulant: {{E.postulant}}</h5> 
+        </div>
+        <button class="btn btn-primary" [disabled]="E.etat=='false'" (click)="postuler(E)">Postuler</button>
+    </div>
+</div>
